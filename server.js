@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const moment = require('moment');
+var port = process.env.PORT;
+
 //TBD: improve regex
 var regex = new RegExp(/([0-9]){10}/);
 
@@ -37,6 +39,5 @@ app.get('/:query', function (req, res) {
   }
 });
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
-})
+app.listen(port);
+console.log("Server is listening on port " + port);
